@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+{% block main %}
+<h1>新規タスク登録</h1>
+<br>
+<div class="row">
+            <div class="col-xs-6">
+            <div class="form-group">
+               <form action="index.php" method="post">
+                        
+                            <p style="font-weight: bold; font-size: 20px;">タスク名:</p> <input type="text" name="tasks_title" class="form-control">
+                            <br>
+                            <p style="font-weight: bold; font-size: 20px;">タスク内容:</p> <input type="text"name="tasks_content" class="form-control">
+	                
+	                        <br>
+	                        <br>
+	                
+	                        <button type="submit"  class="btn btn-danger">登録する</button>
+                        
+                </form> 
+            <br>
+            </div>
+        </div>
+</div>
+{% endblock %}
+{% block button %}{{ backLocation }}{% endblock %}
+{% block buttonLogo %}{{ backLogo }}{% endblock %}
+{% block buttonName %}{{ back }}{% endblock %}

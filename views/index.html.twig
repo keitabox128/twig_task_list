@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+{% block main %}
+<table class ="table table-striped">
+<tr>
+     <th>タスク名</th>
+     <th>タスク内容</th>
+     <th>記載時間</th>
+     <th></th>
+</tr>
+{% if tasks %}
+    {% for task in tasks %}
+<tr>
+        <td>{{ task.tasks_title }}</td>
+        <td>{{ task.tasks_content }}</td>
+        <td>{{ task.created_at }}</td>
+        <td>
+            <form action="delete.php" method="post" >
+	           <button type="submit"  class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span>
+	           &nbsp;削除する</button>
+                <input type="hidden" name="id" value="{{ task.id }}">
+            </form>
+        </td>
+</tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}
+{% block button %}{{ registerLocation }}{% endblock %}
+{% block buttonLogo %}{{ registerLogo }}{% endblock %}
+{% block buttonName %}{{ register }}{% endblock %}
