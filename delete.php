@@ -26,7 +26,7 @@ if(empty($_POST)){
         $id_string = $_POST['id'];
 
         $id = (int)$id_string;
-        var_dump($id);
+        //var_dump($id);
   
     //SQL文：プリペアステートメント
     $sql = 'DELETE FROM tasklist.tasks WHERE id ='.$id;
@@ -40,11 +40,11 @@ if(empty($_POST)){
         $stmt->execute();
 
         //変更された行の数が1かどうか
-        if($stmt->rowCount() == 1){
-            echo "削除しました。";
-        }else{
-            echo "削除失敗です";
-        }
+        //if($stmt->rowCount() == 1){
+        //    echo "削除しました。";
+        //}else{
+        //    echo "削除失敗です";
+        //}
 
         
         //ステートメント切断
